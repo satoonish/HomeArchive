@@ -5,13 +5,9 @@ The following tools were used to generate this project:
 
 The following steps were used to generate this project:
 - Create vue project with create-vite: `npm init --yes vue@latest homearchive.client -- --eslint  --typescript `.
-- Update `vite.config.ts` to set up proxying and certs.
-- Add `@type/node` for `vite.config.js` typing.
-- Update `HelloWorld` component to fetch and display weather information.
+- Updating vite.config.ts with port.
 - Add `shims-vue.d.ts` for basic types.
 - Create project file (`homearchive.client.esproj`).
 - Create `launch.json` to enable debugging.
 - Add project to solution.
-- Update proxy endpoint to be the backend server endpoint.
-- Add project to the startup projects list.
 - Write this file.
