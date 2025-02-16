@@ -9,18 +9,10 @@ EXPOSE 8081
 
 
 # このステージは、サービス プロジェクトのビルドに使用されます
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS with-node
-RUN apt-get update
-RUN apt-get install curl
-RUN curl -sL https://deb.nodesource.com/setup_20.x | bash
-RUN apt-get -y install nodejs
-
-
-FROM with-node AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["HomeArchive.Server/HomeArchive.Server.csproj", "HomeArchive.Server/"]
-COPY ["homearchive.client/homearchive.client.esproj", "homearchive.client/"]
 RUN dotnet restore "./HomeArchive.Server/HomeArchive.Server.csproj"
 COPY . .
 WORKDIR "/src/HomeArchive.Server"
