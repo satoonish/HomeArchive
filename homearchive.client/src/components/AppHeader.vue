@@ -11,13 +11,18 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { onBeforeMount, ref } from 'vue';
 import { useTheme } from 'vuetify';
 
 const theme = useTheme();
 const themeIcon = ref('mdi-weather-night');
 
+onBeforeMount(() => {
+    themeIcon.value = theme.global.current.value.dark ? 'mdi-weather-sunny' : 'mdi-weather-night';
+});
+
 const changeTheme = () => {
   theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark';
-  themeIcon.value = theme.global.current.value.dark ? 'mdi-weather-sunny' : 'mdi-weather-night';}
+  themeIcon.value = theme.global.current.value.dark ? 'mdi-weather-sunny' : 'mdi-weather-night';
+};
 </script>
