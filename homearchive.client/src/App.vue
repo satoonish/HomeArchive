@@ -3,6 +3,7 @@
     <AppHeader/>
 
     <v-main>
+      <NoteBook/>
     </v-main>
 
     <AppFooter/>
@@ -12,4 +13,5 @@
 <script lang="ts" setup>
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
+import NoteBook from './components/NoteBook.vue';
 </script>
